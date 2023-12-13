@@ -21,6 +21,9 @@ Route::post('/register', 'Api\RegisterController@register');
 Route::post('/login', 'Api\LoginController@login');
 Route::get('/recoverpassword/{recovery_code}', 'Api\ForgotPasswordController@recover');
 
+
+Route::post('/test', 'Api\IpAddressController@index');
+
 Route::post('/changepassword', 'Api\ForgotPasswordController@changepassword');
 Route::post('/sendrecovery', 'Api\ForgotPasswordController@sendrecovery');
 

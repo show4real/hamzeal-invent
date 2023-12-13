@@ -138,6 +138,10 @@ class Product extends Model
         return $this->hasMany('App\Pos','product_id');
     }
 
+    public function creditors(){
+        return $this->hasMany('App\Creditor','product_id');
+    }
+
     public function pImage(){
         return $this->hasMany('App\ProductImage', 'product_id')->select('id','url');
     }
@@ -146,6 +150,7 @@ class Product extends Model
       
         $this->purchaseOrders()->delete();
         $this->sales()->delete();
+         $this->creditors()->delete();
         $this->stocks()->delete();
         $this->pAttributes()->delete();
         $this->attributes()->delete();
