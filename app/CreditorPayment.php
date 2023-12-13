@@ -23,8 +23,12 @@ class CreditorPayment extends Model
 
      public function getSupplierNameAttribute(){
          if($this->creditor_id){
-             $creditor = Creditor::where('id', $this->creditor_id)->first()->supplier_name;
-             return $creditor;
+             $creditor = Creditor::where('id', $this->creditor_id)->first();
+
+             if($creditor){
+                return $creditor->supplier_name;
+             }
+           
 
          }
      }
