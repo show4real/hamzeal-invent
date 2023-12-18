@@ -26,7 +26,7 @@ class CreditorPayment extends Model
              $creditor = Creditor::where('id', $this->creditor_id)->first();
 
              if($creditor){
-                return $creditor->supplier_name;
+            return $creditor->supplier_name;
              }
            
 
