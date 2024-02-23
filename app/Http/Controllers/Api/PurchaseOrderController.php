@@ -215,6 +215,17 @@ class PurchaseOrderController extends Controller
             return response()->json(compact('purchase_order'), 200);
     }
 
+
+     public function editPrice(Request $request)
+    {
+       
+        $purchase_order = $this->purchase_order->findOrFail($request->id);
+        $purchase_order->unit_selling_price = $request->unit_selling_price;
+        $purchase_order->save();
+        
+        return response()->json(compact('purchase_order'), 200);
+    }
+
     
 
 

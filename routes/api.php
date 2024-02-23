@@ -112,6 +112,7 @@ function(){
     Route::post('move_order/{order}', 'Api\PurchaseOrderController@moveOrder');
     Route::post('purchase_order/editserial/{id}', 'Api\PurchaseOrderController@editSerial');
     Route::post('purchase_order/serials', 'Api\PurchaseOrderSerialController@getSerials');
+    Route::post('purchase_order/editprice', 'Api\PurchaseOrderSerialController@editPrice');
 
     
 
