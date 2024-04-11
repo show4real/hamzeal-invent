@@ -126,7 +126,7 @@ class PurchaseOrder extends Model
     public function product()
     {
         return $this->belongsTo('App\Product', 'product_id')
-            ->select('id', 'name');
+            ->select('id', 'name', 'description');
     }
 
     public function branch()
